@@ -1,4 +1,4 @@
-## Web App using Django
+## 🐅  Web App using Django
 
 App Features:
 
@@ -7,3 +7,4 @@ App Features:
 - upload icon picture
 - make a blog post
 - edit blog post
+- delete blog post
