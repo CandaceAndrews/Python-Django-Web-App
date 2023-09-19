@@ -4,7 +4,7 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <lengend class="border-bottom mb-4">Join Today</legend>
+                <legend class="border-bottom mb-4">Join Today</legend>
                     {{ form }}
             </fieldset>
             <div class="form-group">
@@ -15,7 +15,6 @@
             <small class="text-muted">
                 Already Have An Account? <a class="ml-2" href="#">Sign In</a>
             </small>
-
         </div>
     </div>
 {% endblock content %}
