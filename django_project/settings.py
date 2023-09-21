@@ -129,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Tell Crisy Forms to use Bootstap 4 instead of the old version
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+# Redirect User to homepage when they log in
+LOGIN_REDIRECT_URL = 'blog-home'
