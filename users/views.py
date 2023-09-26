@@ -20,11 +20,11 @@ def register(request):
 
 @login_required
 def profile(request):
-    u_form = UserUpdateForm()
-    p_form = ProfileUpdateForm()
+    u_form = UserUpdateForm(instance=request.user)
+    p_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
-        'u_from': u_form,
+        'u_form': u_form,
         'p_form': p_form,
     }
 
