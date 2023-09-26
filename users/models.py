@@ -13,8 +13,11 @@ class Profile(models.Model):
     def save(self):
         # Run save method of parent class by using 'super()'
         super().save()
-        
+
         img = Image.open(self.image.path)
-        
+
+        # Resize the image and save it (Helps for users uploading large images)
         if img.height > 300 or img.width > 300:
-            
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
