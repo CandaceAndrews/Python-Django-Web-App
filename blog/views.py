@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView
+)
 from .models import Post
 
 
@@ -19,6 +23,14 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     # This view used django's default variables so you can have less lines of code
     model = Post
+
+
+class PostCreateView(CreateView):
+    model = Post
+    fields = [
+        'title',
+        'content',
+    ]
 
 
 def about(request):
