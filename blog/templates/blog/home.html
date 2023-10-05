@@ -13,5 +13,9 @@
         </div>
     </article>
     {% endfor %}
-    
+    {% if is_paginated %}
+
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+    {% endif %}
 {% endblock content %}
