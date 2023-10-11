@@ -33,7 +33,8 @@ class UserPostListView(ListView):
     paginate_by = 5
 
     def get_query_set(self):
-        
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+
 
 class PostDetailView(DetailView):
     # This view used django's default variables so you can have less lines of code
