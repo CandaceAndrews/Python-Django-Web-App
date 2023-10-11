@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
 from django.views.generic import (
     ListView,
     DetailView,
@@ -31,6 +32,8 @@ class UserPostListView(ListView):
     ordering = ['-date_posted']
     paginate_by = 5
 
+    def get_query_set(self):
+        
 
 class PostDetailView(DetailView):
     # This view used django's default variables so you can have less lines of code
@@ -77,6 +80,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-
-def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    def about(request):
+        return render(request, 'blog/about.html', {'title': 'About'})
